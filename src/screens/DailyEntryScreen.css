@@ -5,7 +5,10 @@
   justify-content: space-between;
   margin-bottom: var(--space-5);
 }
-
+.daily-header-text {
+  flex: 1;
+  min-width: 0;
+}
 .daily-player {
   font-size: var(--font-size-2xl);
   font-weight: 800;
@@ -30,6 +33,38 @@
   border-radius: var(--radius-full);
   margin-top: var(--space-1);
   white-space: nowrap;
+}
+
+.daily-date-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-size: 1.1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: var(--space-1);
+  position: relative;
+  transition: background var(--transition);
+}
+
+.daily-date-picker:hover {
+  background: #c7d2fe;
+}
+
+.daily-date-picker input[type="date"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  border: none;
+  padding: 0;
 }
 
 /* ─── Try inputs grid ────────────────────────────────────────────────────── */

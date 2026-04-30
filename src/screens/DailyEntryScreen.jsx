@@ -10,6 +10,7 @@ const NUM_TRIES = 10
 // status machine: idle → confirm | submitting → success | error
 export default function DailyEntryScreen({ playerName }) {
   const today = getTodayISO()
+  const [selectedDate, setSelectedDate] = useState(today)
   const [tries, setTries] = useState(Array(NUM_TRIES).fill(''))
   const [status, setStatus] = useState('idle')
   const [errorMsg, setErrorMsg] = useState('')
@@ -50,7 +51,7 @@ export default function DailyEntryScreen({ playerName }) {
     if (filledTries.length === 0) return
 
     if (!confirmed) {
-      const existing = storage.getSubmissionForDate(playerName, today)
+      const existing = storage.getSubmissionForDate(playerName, selectedDate)
       if (existing) {
         setStatus('confirm')
         return
@@ -62,7 +63,7 @@ export default function DailyEntryScreen({ playerName }) {
 
     const payload = {
       name:        playerName,
-      date:        today,
+      date:        selectedDate,
       tries:       tries.map((t) => (t === '' ? null : Number(t))),
       total,
       average:     average !== null ? parseFloat(average) : 0,
@@ -84,6 +85,7 @@ export default function DailyEntryScreen({ playerName }) {
     setTries(Array(NUM_TRIES).fill(''))
     setStatus('idle')
     setErrorMsg('')
+    setSelectedDate(today)
   }
 
   // ── Render ──────────────────────────────────────────────────────────────────
@@ -95,11 +97,27 @@ export default function DailyEntryScreen({ playerName }) {
     <div className="screen daily">
       {/* Header */}
       <header className="daily-header">
-        <div>
+        <div className="daily-header-text">
           <div className="daily-player">{playerName}</div>
-          <div className="daily-date">{formatDateDisplay(today)}</div>
+          <div className="daily-date">{formatDateDisplay(selectedDate)}</div>
         </div>
-        <div className="daily-badge">5 balls</div>
+        <label className="daily-date-picker" title="Change date">
+          <input
+            type="date"
+            value={selectedDate}
+            max={today}
+            onChange={(e) => {
+              if (e.target.value) {
+                setSelectedDate(e.target.value)
+                setStatus('idle')
+                setErrorMsg('')
+              }
+            }}
+            disabled={busy || done}
+            aria-label="Session date"
+          />
+          📅
+        </label>
       </header>
 
       {/* Endpoint missing warning */}
@@ -111,7 +129,7 @@ export default function DailyEntryScreen({ playerName }) {
       )}
 
       {/* Already submitted indicator */}
-      {storage.getSubmissionForDate(playerName, today) && status === 'idle' && (
+      {storage.getSubmissionForDate(playerName, selectedDate) && status === 'idle' && (
         <div className="alert alert--info">
           ✓ You already submitted today. Entering new values will overwrite.
         </div>
@@ -186,7 +204,7 @@ export default function DailyEntryScreen({ playerName }) {
 
       {status === 'success' && (
         <div className="alert alert--success">
-          ✓ Submitted! <strong>{total}</strong> total catches recorded for today.
+          ✓ Submitted! <strong>{total}</strong> total catches recorded for {selectedDate === today ? 'today' : formatDateDisplay(selectedDate)}.
           <button
             className="btn btn--sm btn--ghost"
             onClick={handleReset}
