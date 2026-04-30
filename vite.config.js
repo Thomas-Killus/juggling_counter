@@ -17,8 +17,8 @@ export default defineConfig({
         background_color: '#f8fafc',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/',
-        scope: '/',
+        start_url: '/juggling_counter/',
+        scope: '/juggling_counter/',
         icons: [
           {
             src: 'icons/pwa-64x64.png',
@@ -45,6 +45,8 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        navigateFallback: '/juggling_counter/index.html',
+        navigateFallbackDenylist: [/^\/api\//],
         runtimeCaching: [],
       },
       devOptions: {
