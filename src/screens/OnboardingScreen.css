@@ -1,0 +1,94 @@
+.onboarding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: var(--space-8) var(--space-6);
+  background: linear-gradient(160deg, var(--color-primary) 0%, #7c3aed 60%, #0f172a 100%);
+}
+
+.onboarding-inner {
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+.onboarding-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+.onboarding-logo img {
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.onboarding-title {
+  font-size: var(--font-size-4xl);
+  font-weight: 900;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-4);
+}
+
+.onboarding-subtitle {
+  font-size: var(--font-size-base);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  margin-bottom: var(--space-8);
+}
+
+.onboarding-form {
+  text-align: left;
+}
+
+.onboarding-form .form-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.onboarding-input {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: var(--font-size-lg);
+  text-align: center;
+  margin-bottom: var(--space-3);
+}
+
+.onboarding-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.onboarding-input:focus {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+
+.onboarding-hint {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+}
+
+.onboarding-hint em {
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.onboarding-btn {
+  font-size: var(--font-size-lg);
+  padding: var(--space-4);
+  background: white;
+  color: var(--color-primary-dark);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.onboarding-btn:hover:not(:disabled) {
+  background: var(--color-primary-light);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,28 @@
+.catch-chart {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.chart-bar {
+  fill: var(--color-primary);
+  opacity: 0.85;
+  transition: opacity var(--transition);
+}
+
+.chart-bar:hover {
+  opacity: 1;
+}
+
+.chart-value {
+  font-size: 9px;
+  font-weight: 700;
+  fill: var(--color-primary-dark);
+  font-family: var(--font-family);
+}
+
+.chart-label {
+  font-size: 9px;
+  fill: var(--color-text-muted);
+  font-family: var(--font-family);
+}

@@ -1,0 +1,134 @@
+/* ─── Empty state ────────────────────────────────────────────────────────── */
+.history-empty {
+  text-align: center;
+  padding: var(--space-12) var(--space-6);
+  color: var(--color-text-muted);
+}
+
+.history-empty-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-4);
+}
+
+.history-empty p {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.history-empty-sub {
+  font-size: var(--font-size-sm) !important;
+  font-weight: 400 !important;
+  color: var(--color-text-subtle) !important;
+}
+
+/* ─── Chart card ─────────────────────────────────────────────────────────── */
+.history-chart-card {
+  margin-bottom: var(--space-5);
+}
+
+.history-chart-title {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-4);
+}
+
+/* ─── History list ───────────────────────────────────────────────────────── */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ─── History item ───────────────────────────────────────────────────────── */
+.history-item {
+  padding: var(--space-4);
+}
+
+.history-item-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.history-item-date {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.history-item-total {
+  font-size: var(--font-size-3xl);
+  font-weight: 900;
+  color: var(--color-primary);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* ─── Stats row ──────────────────────────────────────────────────────────── */
+.history-item-stats {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.history-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.history-stat-label {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-subtle);
+}
+
+.history-stat-value {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.history-stat--accent .history-stat-value {
+  color: var(--color-accent-dark);
+}
+
+/* ─── Try dots ───────────────────────────────────────────────────────────── */
+.history-tries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.try-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.75rem;
+  height: 1.75rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+  padding: 0 var(--space-1);
+}
+
+.try-dot--best {
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  outline: 1.5px solid var(--color-accent);
+}
+
+.try-dot--empty {
+  background: var(--color-surface-3);
+  opacity: 0.4;
+  min-width: 1rem;
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <circle cx="256" cy="256" r="256" fill="#6366f1"/>
+  <!-- Top ball (white) -->
+  <circle cx="256" cy="115" r="62" fill="#f1f5f9"/>
+  <!-- Left ball (amber) -->
+  <circle cx="135" cy="300" r="52" fill="#f59e0b"/>
+  <!-- Right ball (green) -->
+  <circle cx="377" cy="300" r="52" fill="#10b981"/>
+  <!-- Inner left ball (lavender) -->
+  <circle cx="196" cy="195" r="36" fill="#a5b4fc" opacity="0.85"/>
+  <!-- Inner right ball (rose) -->
+  <circle cx="316" cy="195" r="36" fill="#fb7185" opacity="0.85"/>
+  <!-- Number 5 -->
+  <text
+    x="256" y="460"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="120"
+    font-weight="900"
+    fill="white"
+    opacity="0.95"
+  >5</text>
+</svg>

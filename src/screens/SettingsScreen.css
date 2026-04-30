@@ -1,0 +1,66 @@
+.settings-section {
+  margin-bottom: var(--space-4);
+}
+
+.settings-section-title {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.settings-section-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.settings-section-desc em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.settings-endpoint-input {
+  font-size: var(--font-size-sm);
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  word-break: break-all;
+}
+
+.settings-code {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  background: rgba(0, 0, 0, 0.07);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-sm);
+  word-break: break-all;
+}
+
+.settings-danger-zone {
+  border-color: rgba(239, 68, 68, 0.25);
+  background: rgba(239, 68, 68, 0.03);
+}
+
+.settings-danger-title {
+  color: var(--color-danger);
+}
+
+/* Green "saved" state reuses primary button styles */
+.btn--success {
+  background: var(--color-success);
+  color: white;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35);
+}
+
+.btn--success:hover:not(:disabled) {
+  background: #059669;
+}
+
+.settings-footer {
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-subtle);
+  padding: var(--space-4) 0 var(--space-8);
+}

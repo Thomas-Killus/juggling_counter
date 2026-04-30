@@ -1,0 +1,159 @@
+/* ─── Header ─────────────────────────────────────────────────────────────── */
+.daily-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+}
+
+.daily-player {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.daily-date {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.daily-badge {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  margin-top: var(--space-1);
+  white-space: nowrap;
+}
+
+/* ─── Try inputs grid ────────────────────────────────────────────────────── */
+.tries-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.try-cell {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  position: relative;
+}
+
+.try-cell--best {
+  border-color: var(--color-accent);
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+.try-label {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.try-cell--best .try-label {
+  color: var(--color-accent-dark);
+}
+
+.try-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: var(--font-family);
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+  padding: var(--space-1) 0;
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* Hide spin buttons */
+  -moz-appearance: textfield;
+}
+
+.try-input::-webkit-outer-spin-button,
+.try-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.try-input:focus {
+  outline: none;
+}
+
+.try-input::placeholder {
+  color: var(--color-surface-3);
+}
+
+.try-input:disabled {
+  opacity: 0.6;
+}
+
+.try-cell--best .try-input {
+  color: var(--color-accent-dark);
+}
+
+/* ─── Stats bar ──────────────────────────────────────────────────────────── */
+.stats-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.stat-value {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.stat--accent .stat-value {
+  color: var(--color-accent);
+}
+
+.stat-label {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 2.5rem;
+  background: var(--color-border);
+}
+
+/* ─── Submit button ──────────────────────────────────────────────────────── */
+.daily-submit {
+  font-size: var(--font-size-lg);
+  padding: var(--space-4);
+  margin-top: var(--space-2);
+}
