@@ -155,3 +155,4 @@ Every time you change `Code.gs` you need a **new deployment** (not just save):
 | CORS error in console | Re-deploy Apps Script with "Anyone" access; check URL is the `/exec` URL |
 | App not installable | Must be served over HTTPS; open in mobile browser → "Add to home screen" |
 | Icons missing after build | Run `npm run generate-icons` then rebuild |
+.
